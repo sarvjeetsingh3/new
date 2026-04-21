@@ -1,6 +1,7 @@
 {
   "name": "new-main",
   "version": "1.0.0",
+  "cache": "npm",
   "description": "",
   "main": "index.js",
   "scripts": {
