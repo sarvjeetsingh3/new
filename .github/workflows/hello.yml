@@ -23,16 +23,10 @@ jobs:
       - name: Run test
         run: npm run test
 
-      - name: Print message
-        run: echo "Hello, GitHub Actions!"
-
-      - name: Print my name
-        run: echo "xyz"
-
-  say-bye:
+  deploy-app:
+    needs: say-hello   
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print message
-        run: echo "Goodbye from second job"
-        
+      - name: Deploy
+        run: echo "deployed"
