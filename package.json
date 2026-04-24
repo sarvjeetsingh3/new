@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-   "test": "node -e \"console.log('test failed'); process.exit(1)\""
+    "test": "jest",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
@@ -14,5 +15,12 @@
   "dependencies": {
     "body-parser": "^2.2.2",
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^17.5.0",
+    "jest": "^30.3.0"
   }
 }
