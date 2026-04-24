@@ -5,27 +5,30 @@ on:
   pull_request:
 
 jobs:
-  say-hello:
+  ci:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node.js with cache
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci   # better than npm install
+
+      - name: Run lint        
+        run: npm run lint
 
       - name: Run test
         run: npm run test
 
   deploy-app:
-    needs: say-hello   
+    needs: ci
     runs-on: ubuntu-latest
 
     steps:
